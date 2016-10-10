@@ -22,18 +22,18 @@ class KaraokeLocal(SmallSMILHandler):
         self.lista_etiq = cHandler.get_tags()
 
     def __str__(self):
-        line = ""
+        linea = ""
         for dic in self.lista_etiq:
             llave = list(dic.keys())[0]
-            line = line + llave
+            linea = linea + llave
             for elemento in dic[llave]:
                 value = dic[llave][elemento]
                 if value:
                     value = dic[llave][elemento]
-                    linea = '\t' + elemento + '=' + '"' + value + '"'
-                    line = line + linea
-            line = line + '\n'
-        print (line)
+                    lineas = '\t' + elemento + '=' + '"' + value + '"'
+                    linea = linea + lineas
+            linea = linea + '\n'
+        print (linea)
 
     def to_json(self, fichero, name=""):
         lista_etiq_json = json.dumps(self.lista_etiq)
